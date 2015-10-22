@@ -28,7 +28,7 @@ GameObject:
   - 33: {fileID: 3369044}
   - 23: {fileID: 2302154}
   - 114: {fileID: 11478824}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: WaterLightWaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 427284}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: ProjectorWaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 491720}
   - 119: {fileID: 11940328}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: RipplesCaustic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - 33: {fileID: 3372678}
   - 23: {fileID: 2346254}
   - 114: {fileID: 11445014}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: waterRefract
   m_TagString: noRed
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432658}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: ProjectorCausticScale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - 23: {fileID: 2341284}
   - 114: {fileID: 11408678}
   - 114: {fileID: 11496780}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: waterSpec
   m_TagString: noRed
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 488884}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - 4: {fileID: 492976}
   - 119: {fileID: 11951986}
   - 114: {fileID: 11451170}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Caustic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 471596}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: water
   m_TagString: noRed
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - 114: {fileID: 11453404}
   - 114: {fileID: 11440146}
   - 114: {fileID: 11441670}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}

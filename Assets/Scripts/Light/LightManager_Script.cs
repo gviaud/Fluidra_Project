@@ -39,8 +39,8 @@ public class LightManager_Script : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		_sceneManager_Script = GameObject.Find ("SceneManager").GetComponent<SceneManager_Script>();
-		_select_Object_Script = GameObject.Find ("SceneManager").GetComponent<Select_Object_Script>();
+		//_sceneManager_Script = GameObject.Find ("SceneManager").GetComponent<SceneManager_Script>();
+		//_select_Object_Script = GameObject.Find ("SceneManager").GetComponent<Select_Object_Script>();
 
 	}
 	

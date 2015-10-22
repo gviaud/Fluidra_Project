@@ -17,7 +17,7 @@ public class MainMenu_Script : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		MySingleton.Instance.Start ();
-		_SceneManager_Script = GameObject.Find ("SceneManager").GetComponent<SceneManager_Script>();
+		//_SceneManager_Script = GameObject.Find ("SceneManager").GetComponent<SceneManager_Script>();
 
 	}
 
