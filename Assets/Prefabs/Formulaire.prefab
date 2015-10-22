@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &182178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22498042}
+  - 114: {fileID: 11426590}
+  - 114: {fileID: 11441506}
+  - 114: {fileID: 11433960}
+  - 114: {fileID: 11469568}
+  - 114: {fileID: 11442106}
+  m_Layer: 0
+  m_Name: Formulaire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &11426590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223f359498a228e43b5d46f5ffee4be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11433960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235570ae2e89b4741946d9dc12cd2746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _texture: {fileID: 0}
+  _texture2: {fileID: 0}
+  _texture3: {fileID: 0}
+  _selectObject: {fileID: 0}
+  _cam1: {fileID: 0}
+  _cam2: {fileID: 0}
+  _backgroundTab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _textVALIDATION: {fileID: 0}
+  _textMiseEnScene: {fileID: 0}
+--- !u!114 &11441506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c0154391cb9cf4abc146c6c5a836a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bandeau: {fileID: 2800000, guid: 2964451af1d7e6f42ba1c80cc51a20fa, type: 3}
+  buffer: 
+  _menuFormulaire: {fileID: 0}
+  _sceneManager: {fileID: 0}
+  _cam1: {fileID: 0}
+  _cam2: {fileID: 0}
+  _slider: {fileID: 0}
+  _messVALIDATION: {fileID: 0}
+--- !u!114 &11442106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cffc8829633174eba8a66932078a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PrixTotalTXT: {fileID: 0}
+  _prixunitaireTXT: {fileID: 0}
+  _SurfaceUnitaireTXT: {fileID: 0}
+  _lightManager: {fileID: 0}
+  _lightManager_Script: {fileID: 0}
+  _cloison:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _reserve: {fileID: 0}
+  _sol: {fileID: 0}
+  _enseigne:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _sceneManager: {fileID: 0}
+  _decalWall:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _decalEnseigne:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  prixSol: []
+  prixMur: []
+  matiereMurModel: []
+  matiereMur: []
+  prixLampeStand: []
+  prixLampeEnseigne: []
+  prixReserve: []
+  matiereReserveModel: []
+  matiereReserve: 
+  prixEnseigne: []
+  prixEnseigneLogo: 0
+  matiereEnseigne: 
+  prixTotal: 0
+  pSol: 0
+  pMurMain: 0
+  pMurGauche: 0
+  pMurDroite: 0
+  pReserve: 0
+  pEnseigne: 0
+  pLightTotal: 0
+  pLightMurMain: 0
+  pLightMurGauche: 0
+  pLightMurDroite: 0
+  pLightReserve: 0
+  pLightEnseigne: 0
+--- !u!114 &11469568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03221c368cf41de4b900062a6690a360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmlFile: {fileID: 0}
+  adresse: 
+  prixSol: []
+  prixMur: []
+  prixLampeStand: []
+  prixLampeEnseigne: []
+  prixReserve: []
+  prixEnseigne: []
+--- !u!224 &22498042
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 5100}
+  m_LocalScale: {x: .150351629, y: .150351629, z: .150351629}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 2915.9375, y: 32989.6484}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 182178}
+  m_IsPrefabParent: 1

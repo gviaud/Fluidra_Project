@@ -1,0 +1,53 @@
+How to use:
+Drag the prefab named "DropOnUnity" in your scene. 
+The GameObject contains the DropOnUnityCtrl component. This has 4 properties:
+- Max file size in MB: This is the maximum size of the files the user can drop onto Unity (default 4)
+- Plain Text File Extensions: An array of file extenstion string that always need to be treated as plain text files and resut in sending OnExternalDragEnd(string aString) instead of OnExternalDragEnd(byte[] bytes)
+- Drag drop JavaScript: The JavaScript that will be executed to enable Drag & drop. (Don't mess with this)
+- Target object: You can drag any gameObject here. It will receive the dragged files
+- Target object under cursor: If checked on, the gameObject (with collider) that is under the cursor when the user drops a file will receive it.
+
+Please note that External Drag & Drop can not be tested in the Editor and will only function in the WebGL (Mac & Windows) or WebPlayer (Mac only). The WebPlayer under Windows has blocked drag & drop (don't now why this is). Standalone builds will not work. 
+
+The TargetObject:
+When you want to use an object as target for Drag & Drop, you must add a script to it. If you want you can use the "DropOnUnityTarget" script or create your own. The script can catch any of the following messages that are broadcasted to the GameObject:
+
+- void OnExternalDragOver(Vector3 cursorPosition)
+This is send whenever the user drags a file over the GameObject's Collider inside Unity, but the user hasn't dropped the file yet. It passes the current cursor position
+
+- void OnExternalDragCancel()
+Send when the drag is canceled or when the cursor is no longer over the collider
+
+- void OnExternalDragEnd(Texture2D aTexture)
+Send when a Drag&Drop is complete and the cursor has been released over the collider of this GameObject. It passes a newly created texture if the file was a PNG or JPG image.
+
+- void OnExternalDragEnd(string aString)
+Send when a Drag&Drop is complete and the cursor has been released over the collider of this GameObject. It passes the contents of the files as a string.
+
+- void OnExternalDragEnd(byte[] bytes)
+Send when a Drag&Drop is complete and the cursor has been released over the collider of this GameObject. It passes the raw contents of the file as a byte array if the file was not a plain text file or a PNG or JPG file.
+
+When you assign a fixed TargetObject in the DropOnUnityCtrl component, this GameObject will receive the same messages regardless whether or not the cursor is over the GameObject or not.
+
+
+Important notes for building your project:
+WebPlayer:
+When you want to display instant behaviour when a user drops a file onto Unity, make sure you have "Run in background" turned on.
+It will also work if this is switched off, but the result will not be displayed unless the webplayer receives focus again.
+Go to File -> Build Settings
+Click on the WebPlayer and switch target if needed.
+Click on "Player Settings"
+Click on "Resolution and Presentation"
+Make sure the "Run in Background" checkbox is on.
+
+
+WebGL:
+When a user drops a big file (1MB or more) onto Unity, WebGL needs to allocate stack memory for the file. I encountered memory errors when I used the default build settings. To prevent this, assign more memory to WebGL.
+At the time of writing (Unity5 in Beta) this feature is undocumented, so it is hard to tell you how much memory should be assigned. The default is 256 MB. When I change it to 512 MB, the demo project runs fine, but I cannot tell you how much memory is needed for your project. You will have to experiment.
+Go to File -> Build Settings
+Click on WebGL and switch target if needed.
+Click on "Player Settings"
+Click on "Publishing Settings"
+Adjust the "WebGL Memory Size" value.
+
+
