@@ -11,6 +11,7 @@ TagManager:
   - ground
   - CylinderObj
   - Reserve
+  - noRed
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - EnseigneObjects
   - interactible4
   - 
-  - 
-  - 
+  - Jupe
+  - Coque
   - 
   - 
   - 

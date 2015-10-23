@@ -72,11 +72,11 @@ Material:
       data:
         first:
           name: _ColorStrength
-        second: 1.39999998
+        second: 5
       data:
         first:
           name: _WetStrength
-        second: .899999976
+        second: 0
     m_Colors:
       data:
         first:
@@ -89,7 +89,7 @@ Material:
       data:
         first:
           name: _CausticDirection
-        second: {r: -4, g: 2, b: 2, a: 3}
+        second: {r: 4, g: 2, b: 2, a: 3}
       data:
         first:
           name: _DistortionDirection
