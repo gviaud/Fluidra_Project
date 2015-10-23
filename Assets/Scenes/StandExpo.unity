@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 112000001, guid: 83424bb65baff9d44862d4dc4a278aa0,
     type: 2}
   m_RuntimeCPUUsage: 25
@@ -482,6 +480,7 @@ GameObject:
   - 4: {fileID: 545629169}
   - 54: {fileID: 545629171}
   - 64: {fileID: 545629170}
+  - 114: {fileID: 545629172}
   m_Layer: 0
   m_Name: SM240_Ref
   m_TagString: Untagged
@@ -512,8 +511,8 @@ Transform:
   - {fileID: 1715157003}
   - {fileID: 167240052}
   - {fileID: 736424488}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 2026044583}
+  m_RootOrder: 0
 --- !u!64 &545629170
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -543,6 +542,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &545629172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 545629168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fcff49aadf11d499329d9db2bf8852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &569369648
 Prefab:
   m_ObjectHideFlags: 0
@@ -2610,6 +2620,14 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 481810, guid: 3cb2eca71e52de04daab21094caed82a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.25999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 158238, guid: 3cb2eca71e52de04daab21094caed82a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cb2eca71e52de04daab21094caed82a, type: 2}
   m_IsPrefabParent: 0
@@ -2812,7 +2830,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1083139213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2830,7 +2848,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &1083139214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3860,6 +3878,46 @@ GameObject:
 GameObject:
   m_PrefabParentObject: {fileID: 193960, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
   m_PrefabInternal: {fileID: 569369648}
+--- !u!1 &2026044581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2026044583}
+  - 114: {fileID: 2026044582}
+  m_Layer: 0
+  m_Name: Fluidra_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2026044582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2026044581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d5da6a8076b3e47b65dc48c568952c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2026044583
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2026044581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 545629169}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &2064726597 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 110104, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
