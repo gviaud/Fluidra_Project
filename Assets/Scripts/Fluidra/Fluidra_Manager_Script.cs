@@ -60,6 +60,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
             spa_GO_2.SetActive(false);
             spa_GO.SetActive(true);
             spa = spa_GO;
+
         }
         while (Time.time - startTime <= 4)
         {

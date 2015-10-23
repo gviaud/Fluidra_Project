@@ -29,6 +29,7 @@ public class Spa_Script : MonoBehaviour {
         water = transform.FindChild("Pool").FindChild("Water").gameObject;
         init_Bias_Pump = water.GetComponent<Renderer>().material.GetFloat("_Bias");
         pump_is_activ = false;
+
     }
 	
 	// Update is called once per frame

@@ -1738,23 +1738,23 @@ Prefab:
       objectReference: {fileID: 596563301}
     - target: {fileID: 22498784, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: .472222209
       objectReference: {fileID: 0}
     - target: {fileID: 22498784, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22491238, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: .472222209
       objectReference: {fileID: 0}
     - target: {fileID: 22491238, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: .472222209
       objectReference: {fileID: 0}
     - target: {fileID: 22491238, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 110842, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_IsActive
