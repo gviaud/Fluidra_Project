@@ -43,7 +43,10 @@ public class Spa_Script : MonoBehaviour {
             Bury();
         else if (Input.GetKeyDown(KeyCode.F4))
             Activ_Pump();
-        
+        else if (Input.GetKeyDown(KeyCode.F5))
+            water.GetComponent<Vidange>().EmptySPA();
+        else if (Input.GetKeyDown(KeyCode.F6))
+            water.GetComponent<Vidange>().FillSpa();
     }
 
     void Change_Texture(GameObject _gameObject, Texture _tex)

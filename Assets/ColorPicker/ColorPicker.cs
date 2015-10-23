@@ -295,7 +295,9 @@ public class ColorPicker : MonoBehaviour {
 		SelectedColor = TempColor;
 		if(receiver)
 		{
-			receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
-		}
+
+            receiver.GetComponent<Renderer>().material.SetColor("_Color", SelectedColor);
+            //receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+        }
 	}
 }
