@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class Vidange : MonoBehaviour {
+
     private Vector3 init_Position;
     private Vector3 last_Position;
+
     // Use this for initialization
     void Start () {
         init_Position = transform.localPosition;
-        last_Position = new Vector3(0, -5.0f, 0);
+        last_Position = new Vector3(0, -5.5f, 0);
 	}
 	
 	// Update is called once per frame

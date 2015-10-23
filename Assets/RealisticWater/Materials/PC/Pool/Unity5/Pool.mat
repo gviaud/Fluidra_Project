@@ -47,7 +47,7 @@ Material:
       data:
         first:
           name: _Scale
-        second: 12
+        second: .100000001
       data:
         first:
           name: _FPOW
@@ -83,7 +83,7 @@ Material:
       data:
         first:
           name: _TexturesScale
-        second: 20
+        second: 5
       data:
         first:
           name: _ReflectionBrightness
@@ -91,7 +91,7 @@ Material:
       data:
         first:
           name: _FoamIntensity
-        second: 15
+        second: 5
       data:
         first:
           name: _FadeBlend

@@ -24,6 +24,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _FalloffTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 5ba3b18ea7aa8d745be7cd6b6af8986b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _CausticTex1
         second:
           m_Texture: {fileID: 2800000, guid: 7ee627cbb8ce34f43afee331fceae535, type: 3}
@@ -42,13 +49,6 @@ Material:
         second:
           m_Texture: {fileID: 2800000, guid: 7ee627cbb8ce34f43afee331fceae535, type: 3}
           m_Scale: {x: 3, y: 2}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _FalloffTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 5ba3b18ea7aa8d745be7cd6b6af8986b, type: 3}
-          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -72,7 +72,7 @@ Material:
       data:
         first:
           name: _ColorStrength
-        second: 5
+        second: 2
       data:
         first:
           name: _WetStrength
