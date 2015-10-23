@@ -67,7 +67,7 @@ public class Spa_Script : MonoBehaviour {
         if (pump_is_activ)
         {
 
-            water.GetComponent<Renderer>().material.SetFloat("_Bias",25);
+            water.GetComponent<Renderer>().material.SetFloat("_Bias",50);
 
         }
         else

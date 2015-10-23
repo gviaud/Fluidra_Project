@@ -44,8 +44,8 @@ public class CameraControl_Script : MonoBehaviour
         _rayon -= Input.mouseScrollDelta.y;
         if (_rayon < 3)
             _rayon = 3;
-        else if (_rayon > 30)
-            _rayon = 30;
+        else if (_rayon > 10)
+            _rayon = 10;
 
         Slide();
 

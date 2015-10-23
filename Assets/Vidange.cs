@@ -23,13 +23,14 @@ public class Vidange : MonoBehaviour {
        
         yield return new WaitForSeconds(delayTime); // start at time X
         float startTime = Time.time; // Time.time contains current frame time, so remember starting point
-
+        float timer = 0;
         while (Time.time - startTime <= 1)
         { // until one second passed
-            transform.localPosition = Vector3.Lerp(transform.localPosition, _pos, Time.time - startTime); // lerp from A to B in one second
-            yield return 1; // wait for next frame
+            transform.localPosition = Vector3.Lerp(transform.localPosition, _pos, timer); // lerp from A to B in one second
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame(); // wait for next frame
         }
-        yield return null;
+        yield return 1;
     }
     
     public void EmptySPA()
