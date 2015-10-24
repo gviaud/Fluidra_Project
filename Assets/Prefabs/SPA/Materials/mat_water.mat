@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mat_water
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 6f8f9ec59d029479fbd7ea497a51db8c, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
@@ -27,7 +27,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: ed1c8fbf93f183f42a4843a1cc3b3695, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -94,6 +94,34 @@ Material:
         second: .5
       data:
         first:
+          name: _Shininess
+        second: .75
+      data:
+        first:
+          name: _RimPower
+        second: .5
+      data:
+        first:
+          name: _Blend
+        second: .519999981
+      data:
+        first:
+          name: _GlobAlpha
+        second: .38499999
+      data:
+        first:
+          name: _MinAlpha
+        second: .25999999
+      data:
+        first:
+          name: _Gloss
+        second: .600000024
+      data:
+        first:
+          name: _Amount
+        second: .075000003
+      data:
+        first:
           name: _Metallic
         second: 0
       data:
@@ -137,3 +165,23 @@ Material:
         first:
           name: _Color
         second: {r: .68235296, g: .729411781, b: .78039223, a: .769999981}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: .957000017, b: .694000006, a: 1}
+      data:
+        first:
+          name: _MainColor
+        second: {r: .894117653, g: .870588243, b: .850980401, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: 1, g: 1, b: 0, a: 0}
+      data:
+        first:
+          name: _SelfIllu
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _DispVect1
+        second: {r: .200000003, g: .300000012, b: .699999988, a: .200000003}
