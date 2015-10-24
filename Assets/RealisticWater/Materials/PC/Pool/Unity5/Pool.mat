@@ -116,7 +116,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .854901969, g: .949019611, b: .984313726, a: 1}
+        second: {r: .588235319, g: .886274517, b: 1, a: 1}
       data:
         first:
           name: _ReflectionColor

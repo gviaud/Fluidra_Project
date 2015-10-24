@@ -15,6 +15,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
     float speed = 0;
 
     GameObject Side_Menu;
+    GameObject Second_Menu;
 
     // Use this for initialization
     void Start ()
@@ -25,7 +26,8 @@ public class Fluidra_Manager_Script : MonoBehaviour {
 
         fluidra_Transition_Image = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Fluidra_Transition_GUI").GetComponent<Image>();
         Side_Menu = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Background SideMenu").gameObject;
-
+        Second_Menu = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Background SecondMenu").gameObject;
+       
         spark_Particle_System = transform.FindChild("Spark").GetComponent<ParticleSystem>();
         spark_Particle_System.Stop();
 
@@ -129,6 +131,15 @@ public class Fluidra_Manager_Script : MonoBehaviour {
 
     }
 
+    public void CloseMenu()
+    {
+
+        Side_Menu.transform.GetChild(0).gameObject.SetActive(false);
+        Side_Menu.transform.GetChild(1).gameObject.SetActive(false);
+        Second_Menu.transform.GetChild(0).gameObject.SetActive(false);
+        Second_Menu.transform.GetChild(1).gameObject.SetActive(false);
+    }
+
     bool Verification()
     {
 
@@ -147,7 +158,18 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         return block_Input;
     }
 
+    public void Change_Texture_Shell(Texture _tex)
+    {
+        if (Verification())
+            Get_Spa().GetComponent<Spa_Script>().Change_Texture(Get_Spa().GetComponent<Spa_Script>().GetShell(), _tex);
 
+    }
+    public void Change_Texture_Skirt(Texture _tex)
+    {
+        if (Verification())
+            Get_Spa().GetComponent<Spa_Script>().Change_Texture(Get_Spa().GetComponent<Spa_Script>().GetSkirt(), _tex);
+
+    }
     public void Emptying()
     {
         if (Verification())

@@ -47,7 +47,7 @@ public class Spa_Script : MonoBehaviour {
 
     }
 
-    void Change_Texture(GameObject _gameObject, Texture _tex)
+    public void Change_Texture(GameObject _gameObject, Texture _tex)
     {
         if(_gameObject != null && ( _gameObject == shell || _gameObject == skirt))
             _gameObject.GetComponent<Renderer>().material.mainTexture = _tex;
