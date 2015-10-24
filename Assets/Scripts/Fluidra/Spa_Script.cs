@@ -15,6 +15,15 @@ public class Spa_Script : MonoBehaviour {
     float init_Bias_Pump;
     bool pump_is_activ;
 
+    enum POSITIONMODE
+    {
+
+        AboveGround,
+        Semi_Bury,
+        Bury
+
+    } POSITIONMODE position_Mode;
+
     // Use this for initialization
     void Start ()
     {
@@ -29,25 +38,13 @@ public class Spa_Script : MonoBehaviour {
         water = transform.FindChild("Pool").FindChild("Water").gameObject;
         init_Bias_Pump = water.GetComponent<Renderer>().material.GetFloat("_Bias");
         pump_is_activ = false;
-
+        position_Mode = POSITIONMODE.AboveGround;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
 
-        if (Input.GetKeyDown(KeyCode.F1))
-            AboveGround();
-        else if (Input.GetKeyDown(KeyCode.F2))
-            Semi_Bury();
-        else if (Input.GetKeyDown(KeyCode.F3))
-            Bury();
-        else if (Input.GetKeyDown(KeyCode.F4))
-            Activ_Pump();
-        else if (Input.GetKeyDown(KeyCode.F5))
-            water.GetComponent<Vidange>().EmptySPA();
-        else if (Input.GetKeyDown(KeyCode.F6))
-            water.GetComponent<Vidange>().FillSpa();
     }
 
     void Change_Texture(GameObject _gameObject, Texture _tex)
@@ -56,10 +53,7 @@ public class Spa_Script : MonoBehaviour {
             _gameObject.GetComponent<Renderer>().material.mainTexture = _tex;
     }
 
-
-   
-    
-    void Activ_Pump()
+    public void Activ_Pump()
     {
 
         pump_is_activ = !pump_is_activ;
@@ -80,7 +74,26 @@ public class Spa_Script : MonoBehaviour {
     }
 
 
-    
+    public void Position_Mode()
+    {
+
+        if(position_Mode == POSITIONMODE.Bury)
+        {
+            AboveGround();
+            position_Mode = POSITIONMODE.AboveGround;
+        }
+        else if (position_Mode == POSITIONMODE.AboveGround)
+        {
+            Semi_Bury();
+            position_Mode = POSITIONMODE.Semi_Bury;
+        }
+        else if (position_Mode == POSITIONMODE.Semi_Bury)
+        {
+            Bury();
+            position_Mode = POSITIONMODE.Bury;
+        }
+
+    }
 
     void AboveGround()
     {
@@ -117,6 +130,10 @@ public class Spa_Script : MonoBehaviour {
     public GameObject GetSkirt()
     {
         return skirt;
+    }
+    public GameObject GetWater()
+    {
+        return water;
     }
 
 }

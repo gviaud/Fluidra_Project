@@ -6,11 +6,14 @@ public class Vidange : MonoBehaviour {
     private Vector3 init_Position;
     private Vector3 last_Position;
 
+    bool empty = false;
+
     // Use this for initialization
     void Start () {
         init_Position = transform.localPosition;
         last_Position = new Vector3(0, -5.5f, 0);
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -33,16 +36,18 @@ public class Vidange : MonoBehaviour {
         yield return 1;
     }
     
-    public void EmptySPA()
+    public void Emptying()
     {
-        
-        StartCoroutine( WaitAndMove(0.2f, last_Position) );
-
+        if(!empty)
+        {
+            StartCoroutine( WaitAndMove(0.2f, last_Position) );
+            empty = true;
+        }
+        else
+        {
+            StartCoroutine(WaitAndMove(0.2f, init_Position));
+            empty = false;
+        }
     }
-    public void FillSpa()
-    {
 
-        StartCoroutine(WaitAndMove(0.2f, init_Position) );
-
-    }
 }

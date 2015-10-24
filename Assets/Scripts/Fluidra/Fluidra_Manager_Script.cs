@@ -14,14 +14,17 @@ public class Fluidra_Manager_Script : MonoBehaviour {
 
     float speed = 0;
 
-	// Use this for initialization
-	void Start ()
+    GameObject Side_Menu;
+
+    // Use this for initialization
+    void Start ()
     {
 
         spa_GO = transform.FindChild("SM240_Ref").gameObject;
         spa_GO_2 = transform.FindChild("SM240_Ref (1)").gameObject;
 
         fluidra_Transition_Image = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Fluidra_Transition_GUI").GetComponent<Image>();
+        Side_Menu = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Background SideMenu").gameObject;
 
         spark_Particle_System = transform.FindChild("Spark").GetComponent<ParticleSystem>();
         spark_Particle_System.Stop();
@@ -35,14 +38,19 @@ public class Fluidra_Manager_Script : MonoBehaviour {
 	void Update ()
     {
 
-        if ( !Input_Is_Block() && Input.GetKeyDown(KeyCode.F7))
+    }
+
+    public void Change_Object()
+    {
+
+        if (Verification())
         {
             block_Input = true;
             StartCoroutine(ChangeSpa(0.2f));
 
         }
-
     }
+
     IEnumerator ChangeSpa(float delayTime)
     {
 
@@ -50,7 +58,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         spark_Particle_System.Play();
         spark_Particle_System.emissionRate = 1;
         spark_Particle_System.startSize = 0.1f;
-
+        spark_Particle_System.Stop();
         GameObject spa;
         if (spa_GO.activeInHierarchy)
             spa = spa_GO;
@@ -62,15 +70,15 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         float startTime = Time.time; // Time.time contains current frame time, so remember starting point
         int turn = 1;
         float lastRotY = 0;
-        while (turn < 4)
+        while (turn < 2)
         {
 
             spa.transform.Rotate(new Vector3(0, speed, 0));
             speed += 2.0f * (turn*4) * Time.deltaTime;
             spark_Particle_System.emissionRate += Time.deltaTime * 1000;
-            if( turn >= 2)
+            if( turn >= 0)
             {
-                fluidra_Transition_Image.color = new Color(1,1,1, (fluidra_Transition_Image.color.a + Time.deltaTime));
+                //fluidra_Transition_Image.color = new Color(1,1,1, (fluidra_Transition_Image.color.a + Time.deltaTime));
                 spark_Particle_System.startSize += Time.deltaTime/5.0f;
             }
             //print(spa.transform.eulerAngles.y + " " + lastRotY);
@@ -96,13 +104,13 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         }
     
         turn = 1;
-        while (turn < 4)
+        while (turn < 2)
         {
             spark_Particle_System.startSize -= Time.deltaTime;
             spa.transform.Rotate(new Vector3(0, speed, 0));
             speed -= 2.0f * (turn * 4) * Time.deltaTime;
             spark_Particle_System.emissionRate -= Time.deltaTime * 1000;
-            fluidra_Transition_Image.color = new Color(1, 1, 1, fluidra_Transition_Image.color.a - Time.deltaTime);
+            //fluidra_Transition_Image.color = new Color(1, 1, 1, fluidra_Transition_Image.color.a - Time.deltaTime);
             if (lastRotY > spa.transform.eulerAngles.y)
                 turn++;
             lastRotY = spa.transform.eulerAngles.y;
@@ -121,10 +129,50 @@ public class Fluidra_Manager_Script : MonoBehaviour {
 
     }
 
-    public bool Input_Is_Block()
+    bool Verification()
     {
 
+        if (Side_Menu.transform.GetChild(0).gameObject.activeInHierarchy)
+        {
+            Side_Menu.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else if (Side_Menu.transform.GetChild(1).gameObject.activeInHierarchy)
+        {
+            Side_Menu.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        return !block_Input;
+    }
+    public bool Input_Is_Block()
+    {
         return block_Input;
+    }
+
+
+    public void Emptying()
+    {
+        if (Verification())
+            Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Vidange>().Emptying();
+    }
+    public void Pump()
+    {
+        if (Verification())
+            Get_Spa().GetComponent<Spa_Script>().Activ_Pump();
+    }
+    public void Position_Mode()
+    {
+        if (Verification())
+            Get_Spa().GetComponent<Spa_Script>().Position_Mode();
+    }
+
+
+    GameObject Get_Spa()
+    {
+
+        if (spa_GO.activeInHierarchy)
+            return spa_GO;
+        else
+            return spa_GO_2;
+
     }
 
 }
