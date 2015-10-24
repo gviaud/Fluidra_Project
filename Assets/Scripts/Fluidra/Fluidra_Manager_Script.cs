@@ -17,6 +17,12 @@ public class Fluidra_Manager_Script : MonoBehaviour {
     GameObject Side_Menu;
     GameObject Second_Menu;
 
+    Color init_Color;
+    bool light_Is_Activ;
+    Light sun;
+
+    GameObject ColorPicker;
+
     // Use this for initialization
     void Start ()
     {
@@ -32,6 +38,12 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         spark_Particle_System.Stop();
 
         spa_GO_2.SetActive(false);
+
+        init_Color = new Color(124.0f/255.0f, 240.0f / 255.0f, 1, 1);
+        light_Is_Activ = true;
+
+        sun = transform.FindChild("Sun").GetComponent<Light>();
+        ColorPicker = transform.FindChild("ColorPicker").gameObject;
 
         block_Input = false;
     }
@@ -138,6 +150,8 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         Side_Menu.transform.GetChild(1).gameObject.SetActive(false);
         Second_Menu.transform.GetChild(0).gameObject.SetActive(false);
         Second_Menu.transform.GetChild(1).gameObject.SetActive(false);
+        ColorPicker.SetActive(false);
+
     }
 
     bool Verification()
@@ -185,7 +199,35 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         if (Verification())
             Get_Spa().GetComponent<Spa_Script>().Position_Mode();
     }
+    
+    public void Activ_Light()
+    {
+        light_Is_Activ = !light_Is_Activ;
 
+
+        if (!light_Is_Activ)
+        {
+            Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().enabled = light_Is_Activ;
+            Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", new Color(0, 0, 0, 1));
+        }
+        else if (light_Is_Activ)
+        {
+            Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().enabled = light_Is_Activ;
+            Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", init_Color);
+        }
+        
+
+       
+
+    }
+
+    public void Change_Water_Color(Color _color)
+    {
+
+        Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().color = _color;
+        Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", _color);
+
+    }
 
     GameObject Get_Spa()
     {

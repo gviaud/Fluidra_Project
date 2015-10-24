@@ -55,7 +55,7 @@ Material:
       data:
         first:
           name: _R0
-        second: 0
+        second: 2.71000004
       data:
         first:
           name: _OffsetFresnel
@@ -87,7 +87,7 @@ Material:
       data:
         first:
           name: _ReflectionBrightness
-        second: .196428552
+        second: .300000012
       data:
         first:
           name: _FoamIntensity

@@ -295,9 +295,10 @@ public class ColorPicker : MonoBehaviour {
 		SelectedColor = TempColor;
 		if(receiver)
 		{
-
-            receiver.GetComponent<Renderer>().material.SetColor("_Color", SelectedColor);
+            receiver.GetComponent<Fluidra_Manager_Script>().Change_Water_Color(SelectedColor);
+            //receiver.GetComponent<Renderer>().material.SetColor("_Color", SelectedColor);
             //receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
         }
 	}
 }
+ 
