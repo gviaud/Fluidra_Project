@@ -18,7 +18,7 @@ public class fixePosLight : MonoBehaviour {
         if (other.name == "plage")
         {
             Debug.Log("D5al");
-            pos = transform.position + new Vector3(0, 0.1f, 0);
+            pos = transform.position + new Vector3(0, 0.3f, 0);
 			transform.position=pos;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
         }
