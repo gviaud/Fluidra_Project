@@ -18,6 +18,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
     GameObject Second_Menu;
 
     Color init_Color;
+    Color curent_Color;
     bool light_Is_Activ;
     Light sun;
 
@@ -42,6 +43,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         spa_GO_2.SetActive(false);
 
         init_Color = new Color(124.0f/255.0f, 240.0f / 255.0f, 1, 1);
+        curent_Color = init_Color;
         light_Is_Activ = true;
 
         sun = transform.FindChild("Sun").GetComponent<Light>();
@@ -216,7 +218,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         else if (light_Is_Activ)
         {
             Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().enabled = light_Is_Activ;
-            Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", init_Color);
+            Change_Water_Color(curent_Color);
         }
         
 
@@ -226,10 +228,10 @@ public class Fluidra_Manager_Script : MonoBehaviour {
 
     public void Change_Water_Color(Color _color)
     {
-
+        
         Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().color = _color;
         Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", _color);
-
+        curent_Color = _color;
     }
 
     GameObject Get_Spa()
