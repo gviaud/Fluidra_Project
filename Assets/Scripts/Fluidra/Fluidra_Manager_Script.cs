@@ -22,6 +22,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
     Light sun;
 
     GameObject ColorPicker;
+    GameObject CubeGenerator;
 
     // Use this for initialization
     void Start ()
@@ -33,7 +34,8 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         fluidra_Transition_Image = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Fluidra_Transition_GUI").GetComponent<Image>();
         Side_Menu = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Background SideMenu").gameObject;
         Second_Menu = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Background SecondMenu").gameObject;
-       
+        CubeGenerator = transform.FindChild("CubeGenerator").gameObject;
+
         spark_Particle_System = transform.FindChild("Spark").GetComponent<ParticleSystem>();
         spark_Particle_System.Stop();
 
@@ -43,7 +45,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         light_Is_Activ = true;
 
         sun = transform.FindChild("Sun").GetComponent<Light>();
-        ColorPicker = transform.FindChild("ColorPicker").gameObject;
+        ColorPicker = Side_Menu.transform.GetChild(2).FindChild("ColorPicker").gameObject;
 
         block_Input = false;
     }
@@ -150,7 +152,8 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         Side_Menu.transform.GetChild(1).gameObject.SetActive(false);
         Second_Menu.transform.GetChild(0).gameObject.SetActive(false);
         Second_Menu.transform.GetChild(1).gameObject.SetActive(false);
-        ColorPicker.SetActive(false);
+        Side_Menu.transform.GetChild(2).gameObject.SetActive(false);
+        //ColorPicker.SetActive(false);
 
     }
 
@@ -194,10 +197,10 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         if (Verification())
             Get_Spa().GetComponent<Spa_Script>().Activ_Pump();
     }
-    public void Position_Mode()
+    public void Position_Mode(float _value)
     {
         if (Verification())
-            Get_Spa().GetComponent<Spa_Script>().Position_Mode();
+            Get_Spa().GetComponent<Spa_Script>().Position_Mode((int)_value);
     }
     
     public void Activ_Light()

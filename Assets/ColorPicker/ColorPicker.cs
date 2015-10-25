@@ -27,7 +27,7 @@ public class ColorPicker : MonoBehaviour {
 	}; 
 	ESTATE mState = ESTATE.Hidden;
 	
-	int sizeFull = 200;
+	int sizeFull = 100;
 	int sizeHidden = 20;
 	float animTime = 0.25f;
 	float dt = 0;
@@ -133,15 +133,15 @@ public class ColorPicker : MonoBehaviour {
 
 		if(mState == ESTATE.Showed)
 		{
-			txtR = GUI.TextField(new Rect(startPos.x + sizeCurr + 10, startPos.y + 30, 40, 20), txtR, 3);
-			txtG = GUI.TextField(new Rect(startPos.x + sizeCurr + 10, startPos.y + 60, 40, 20), txtG, 3);
-			txtB = GUI.TextField(new Rect(startPos.x + sizeCurr + 10, startPos.y + 90, 40, 20), txtB, 3);
-			txtA = GUI.TextField(new Rect(startPos.x + sizeCurr + 10, startPos.y + 120, 40, 20), txtA, 3);
-			valR = GUI.HorizontalSlider(new Rect(startPos.x + sizeCurr + 50, startPos.y + 35, 60, 20), valR, 0.0f, 1.0f);
-			valG = GUI.HorizontalSlider(new Rect(startPos.x + sizeCurr + 50, startPos.y + 65, 60, 20), valG, 0.0f, 1.0f);
-			valB = GUI.HorizontalSlider(new Rect(startPos.x + sizeCurr + 50, startPos.y + 95, 60, 20), valB, 0.0f, 1.0f);
-			valA = GUI.HorizontalSlider(new Rect(startPos.x + sizeCurr + 50, startPos.y + 125, 60, 20), valA, 0.0f, 1.0f);
-			if(GUI.Button(new Rect(startPos.x + sizeCurr + 10, startPos.y + 150, 60, 20), "Apply"))
+			//txtR = GUI.TextField(new Rect(startPos.x + sizeCurr + 10, startPos.y + 30, 40, 20), txtR, 3);
+			//txtG = GUI.TextField(new Rect(startPos.x + sizeCurr + 10, startPos.y + 60, 40, 20), txtG, 3);
+			///txtB = GUI.TextField(new Rect(startPos.x + sizeCurr + 10, startPos.y + 90, 40, 20), txtB, 3);
+			//txtA = GUI.TextField(new Rect(startPos.x + sizeCurr + 10, startPos.y + 120, 40, 20), txtA, 3);
+			//valR = GUI.HorizontalSlider(new Rect(startPos.x + sizeCurr + 50, startPos.y + 35, 60, 20), valR, 0.0f, 1.0f);
+			//valG = GUI.HorizontalSlider(new Rect(startPos.x + sizeCurr + 50, startPos.y + 65, 60, 20), valG, 0.0f, 1.0f);
+			//valB = GUI.HorizontalSlider(new Rect(startPos.x + sizeCurr + 50, startPos.y + 95, 60, 20), valB, 0.0f, 1.0f);
+			//valA = GUI.HorizontalSlider(new Rect(startPos.x + sizeCurr + 50, startPos.y + 125, 60, 20), valA, 0.0f, 1.0f);
+			/*if(GUI.Button(new Rect(startPos.x + sizeCurr + 10, startPos.y + 150, 60, 20), "Apply"))
 			{
 				ApplyColor();
 				SelectedColor = TempColor;
@@ -149,7 +149,7 @@ public class ColorPicker : MonoBehaviour {
 				{
 					receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 				}
-			}
+			}*/
 
 			GUIStyle labelStyleRGBA = new GUIStyle(GUI.skin.label);
 			labelStyleRGBA.normal.textColor = Color.white;
@@ -163,7 +163,9 @@ public class ColorPicker : MonoBehaviour {
 		if(mState == ESTATE.Showing)
 		{
 			sizeCurr = Mathf.Lerp(sizeHidden, sizeFull, dt/animTime);
-			if(dt/animTime > 1.0f) {
+            //startPos = Vector2.Lerp(startPos, new Vector2(681.32f, startPos.y), dt / animTime);
+ 
+            if (dt/animTime > 1.0f) {
 				mState = ESTATE.Showed;
 			}
 			dt += Time.deltaTime;
@@ -171,7 +173,8 @@ public class ColorPicker : MonoBehaviour {
 		if(mState == ESTATE.Hidding)
 		{
 			sizeCurr = Mathf.Lerp(sizeFull, sizeHidden, dt/animTime);
-			if(dt/animTime > 1.0f) {
+            //startPos = Vector2.Lerp(startPos, new Vector2(852.86f, startPos.y), dt / animTime);
+            if (dt/animTime > 1.0f) {
 				mState = ESTATE.Hidden;
 			}
 			dt += Time.deltaTime;

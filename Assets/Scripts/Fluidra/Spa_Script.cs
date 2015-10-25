@@ -74,20 +74,20 @@ public class Spa_Script : MonoBehaviour {
     }
 
 
-    public void Position_Mode()
+    public void Position_Mode(int _value)
     {
 
-        if(position_Mode == POSITIONMODE.Bury)
+        if(_value == 1)
         {
             AboveGround();
             position_Mode = POSITIONMODE.AboveGround;
         }
-        else if (position_Mode == POSITIONMODE.AboveGround)
+        else if (_value == 2)
         {
             Semi_Bury();
             position_Mode = POSITIONMODE.Semi_Bury;
         }
-        else if (position_Mode == POSITIONMODE.Semi_Bury)
+        else if (_value == 3)
         {
             Bury();
             position_Mode = POSITIONMODE.Bury;
