@@ -213,7 +213,7 @@ public class ColorPicker : MonoBehaviour {
 			{
 				if(isLeftMBtnClicked)
 				{
-					//ApplyColor();
+					ApplyColor();
 				}
 				else
 				{
@@ -300,9 +300,8 @@ public class ColorPicker : MonoBehaviour {
 		SelectedColor = TempColor;
 		if(receiver)
 		{
-           // if(  )
            
-            receiver.GetComponent<Fluidra_Manager_Script>().Change_Water_Color(SelectedColor);
+            receiver.GetComponent<Fluidra_Manager_Script>().Change_Water_Color(SelectedColor, receiver.GetComponent<Fluidra_Manager_Script>().light_Is_Activ);
             //receiver.GetComponent<Renderer>().material.SetColor("_Color", SelectedColor);
             //receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
         }

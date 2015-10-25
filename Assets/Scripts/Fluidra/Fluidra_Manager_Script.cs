@@ -19,7 +19,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
 
     Color init_Color;
     Color curent_Color;
-    bool light_Is_Activ;
+    public bool light_Is_Activ;
     Light sun;
 
     GameObject ColorPicker;
@@ -223,7 +223,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
     
     public void Activ_Light(bool _activ)
     {
-        //light_Is_Activ = !light_Is_Activ;
+        light_Is_Activ = _activ;
 
         print(_activ);
         if (!_activ)
