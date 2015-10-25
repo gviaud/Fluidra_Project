@@ -39,7 +39,7 @@ public class CubeGenerator : MonoBehaviour
             {
                 Debug.Log(Hit.collider.name);
             }
-            if (Input.GetButtonDown("Fire1") && Hit.collider.name == "plage")
+            if (Input.GetButtonDown("Fire1") && Hit.collider && Hit.collider.name == "plage")
             {
 
 
@@ -48,7 +48,7 @@ public class CubeGenerator : MonoBehaviour
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
                 Destroy(go, 5);
             }
-            else if (Input.GetButtonDown("Fire1") && Hit.collider.name == "Water")
+            else if (Input.GetButtonDown("Fire1") && Hit.collider && Hit.collider.name == "Water")
             {
 
                 Debug.Log(Hit.point);

@@ -27,7 +27,7 @@ public class ColorPicker : MonoBehaviour {
 	}; 
 	ESTATE mState = ESTATE.Hidden;
 	
-	int sizeFull = 100;
+	int sizeFull = 143;
 	int sizeHidden = 20;
 	float animTime = 0.25f;
 	float dt = 0;
@@ -52,7 +52,8 @@ public class ColorPicker : MonoBehaviour {
 
 	void Start()
 	{
-		sizeCurr = sizeHidden;
+        sizeHidden = sizeFull;
+        sizeCurr = sizeHidden;
 
 		txColorDisplay = new Texture2D(1, 1, TextureFormat.ARGB32, false);
 		if(receiver)
@@ -119,7 +120,8 @@ public class ColorPicker : MonoBehaviour {
 	// Update is called once per frame
 	public void _DrawGUI () 
 	{
-		if (titleStyle == null) {
+        mState = ESTATE.Showing;
+        if (titleStyle == null) {
 			titleStyle = new GUIStyle (GUI.skin.label);
 			titleStyle.normal.textColor = textColor;
 		}
@@ -129,7 +131,7 @@ public class ColorPicker : MonoBehaviour {
 
 		GUI.Label(new Rect(startPos.x + sizeCurr + 60, startPos.y, 200, 30), Title, titleStyle);
 
-		GUI.DrawTexture(new Rect(startPos.x + sizeCurr + 10, startPos.y, 40, 20), txColorDisplay);
+		//GUI.DrawTexture(new Rect(startPos.x + sizeCurr + 10, startPos.y, 40, 20), txColorDisplay);
 
 		if(mState == ESTATE.Showed)
 		{
@@ -186,7 +188,7 @@ public class ColorPicker : MonoBehaviour {
 		float alphaGradHeight = alphaGradientHeight * (sizeCurr/sizeFull);
 		Vector2 startPosAlpha = startPos + new Vector2(0, sizeCurr);
 		Rect rectAlpha = new Rect(startPosAlpha.x, startPosAlpha.y, sizeCurr, alphaGradHeight);
-		GUI.DrawTexture(rectAlpha, alphaGradient);
+		//GUI.DrawTexture(rectAlpha, alphaGradient);
 
 		Rect rectFullSize = new Rect(startPos.x, startPos.y, sizeCurr, sizeCurr + alphaGradHeight);
 

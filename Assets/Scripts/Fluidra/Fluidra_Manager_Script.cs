@@ -221,33 +221,36 @@ public class Fluidra_Manager_Script : MonoBehaviour {
             Get_Spa().GetComponent<Spa_Script>().Position_Mode((int)_value);
     }
     
-    public void Activ_Light()
+    public void Activ_Light(bool _activ)
     {
-        light_Is_Activ = !light_Is_Activ;
+        //light_Is_Activ = !light_Is_Activ;
 
 
-        if (!light_Is_Activ)
+        if (!_activ)
         {
-            Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().enabled = light_Is_Activ;
-            Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", new Color(0, 0, 0, 1));
+            Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().enabled = false;
+            Change_Water_Color(new Color(0, 0, 0, 1), true);
+           // Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", new Color(0, 0, 0, 1));
         }
-        else if (light_Is_Activ)
+        else if (_activ)
         {
-            Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().enabled = light_Is_Activ;
+            Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().enabled = true;
             Change_Water_Color(curent_Color);
         }
-        
-
-       
-
+ 
     }
 
-    public void Change_Water_Color(Color _color)
+    public void Change_Water_Color(Color _color, bool _bool = false)
     {
         
         Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().color = _color;
         Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", _color);
-        curent_Color = _color;
+  
+        if( !_bool )
+        {
+            print(_color);
+            curent_Color = _color;
+        }
     }
 
     GameObject Get_Spa()
