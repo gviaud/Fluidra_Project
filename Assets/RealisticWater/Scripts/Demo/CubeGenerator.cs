@@ -14,7 +14,7 @@ public class CubeGenerator : MonoBehaviour
     bool On_GUI()
     {
         Vector3 mousePos = Input.mousePosition;
-        print(mousePos);
+        //print(mousePos);
 
         bool pass = true;
 
@@ -27,28 +27,44 @@ public class CubeGenerator : MonoBehaviour
 
     }
 
-	void Update()
+    void Update()
     {
 
-        if (Input.GetButtonDown ("Fire1") && !On_GUI()) 
-		{
-			var mousePos = Input.mousePosition;
-			mousePos.z = 11;       // we want 2m away from the camera position
-			var objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-			//Debug.Log(objectPos);
-			var go = Instantiate(cubes, objectPos, Quaternion.identity)  as GameObject;
-			go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
-			go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
-			Destroy(go, 30);
-		}
+        if (!On_GUI())
+        {
+            RaycastHit Hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+            if (Physics.Raycast(ray, out Hit, 500))
+            {
+                Debug.Log(Hit.collider.name);
+            }
+            if (Input.GetButtonDown("Fire1") && Hit.collider.name == "plage")
+            {
 
-	}
-	// Update is called once per frame
-	void UpdateCube ()
-	{
-	    var pos = transform.position;
-	    pos.y += 10;
-	    pos.z -= 4;
+
+                var go = Instantiate(cubes, Hit.point + new Vector3(0, 0.5f, 0), Quaternion.identity) as GameObject;
+                go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
+                go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
+                Destroy(go, 5);
+            }
+            else if (Input.GetButtonDown("Fire1") && Hit.collider.name == "Water")
+            {
+
+                Debug.Log(Hit.point);
+                var go = Instantiate(cubes, Hit.point, Quaternion.identity) as GameObject;
+                go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
+                go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
+                Destroy(go, 5);
+            }
+        }
+    }
+    // Update is called once per frame
+    void UpdateCube()
+    {
+        var pos = transform.position;
+        pos.y += 10;
+        pos.z -= 4;
 	    pos += Random.insideUnitSphere *0.01f;
         var go = Instantiate(cubes, pos, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360))) as GameObject;
 		go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);

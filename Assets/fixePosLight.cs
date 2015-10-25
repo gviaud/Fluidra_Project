@@ -15,16 +15,19 @@ public class fixePosLight : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other){
 
-if (other.name == "plage") {
-			Debug.Log ("D5al");
-			pos=transform.position;
-			GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
-		}
-		if (other.name == "Water") {
-			Debug.Log ("D5al");
-			pos=transform.position;
-			GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-		}
-	}
+        if (other.name == "plage")
+        {
+            Debug.Log("D5al");
+            pos = transform.position + new Vector3(0, 1.5f, 0);
+
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+        }
+        if (other.name == "Water")
+        {
+            Debug.Log("D5al");
+            pos = transform.position;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        }
+    }
 
 }
