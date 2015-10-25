@@ -26,8 +26,8 @@ public class fixePosLight : MonoBehaviour {
         {
             Debug.Log("D5al");
             pos = transform.position;
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-        }
-    }
+			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+		}
+	}
 
 }
