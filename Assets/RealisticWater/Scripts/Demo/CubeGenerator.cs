@@ -43,7 +43,7 @@ public class CubeGenerator : MonoBehaviour
             {
 
 
-                var go = Instantiate(cubes, Hit.point + new Vector3(0, 1.5f, 0), Quaternion.identity) as GameObject;
+                var go = Instantiate(cubes, Hit.point + new Vector3(0, 1f, 0), Quaternion.identity) as GameObject;
                 go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
                 Destroy(go, 5);
@@ -52,7 +52,7 @@ public class CubeGenerator : MonoBehaviour
             {
 
                 Debug.Log(Hit.point);
-				var go = Instantiate(cubes,Hit.point + new Vector3(0, 1.5f, 0), Quaternion.identity) as GameObject;
+				var go = Instantiate(cubes,Hit.point + new Vector3(0, 1f, 0), Quaternion.identity) as GameObject;
                 go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
                 Destroy(go, 5);
