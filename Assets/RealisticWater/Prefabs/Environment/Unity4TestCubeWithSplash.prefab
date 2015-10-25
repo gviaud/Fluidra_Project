@@ -117,7 +117,7 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4279440383
-  m_Size: .699999988
+  m_Size: .460000008
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -131,7 +131,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size
-      value: .699999988
+      value: .460000008
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: splashSizeMultiplier
