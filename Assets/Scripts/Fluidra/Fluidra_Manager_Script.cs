@@ -24,6 +24,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
 
     GameObject ColorPicker;
     GameObject CubeGenerator;
+    Text Choix_Menu;
 
     // Use this for initialization
     void Start ()
@@ -36,6 +37,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         Side_Menu = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Background SideMenu").gameObject;
         Second_Menu = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Background SecondMenu").gameObject;
         CubeGenerator = transform.FindChild("CubeGenerator").gameObject;
+        Choix_Menu = GameObject.Find("CameraGUI").transform.GetChild(0).transform.FindChild("Background Choix").GetChild(0).GetComponent<Text>() ;
 
         spark_Particle_System = transform.FindChild("Spark").GetComponent<ParticleSystem>();
         spark_Particle_System.Stop();
@@ -67,6 +69,20 @@ public class Fluidra_Manager_Script : MonoBehaviour {
             StartCoroutine(ChangeSpa(0.2f));
 
         }
+    }
+
+    public void GriserTextMenu(Text t)
+    {
+
+        t.color = new Color(0.4f, 0.4f, 0.4f);
+    }
+    public void WhiteTextMenu(Text t)
+    {
+        t.color = Color.white;
+    }
+    public void ChangetextMenu(string _text)
+    {
+        Choix_Menu.text = _text;
     }
 
     IEnumerator ChangeSpa(float delayTime)
