@@ -8089,7 +8089,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 977976026}
-  cubes: {fileID: 161140, guid: 0ae4da265070d6b41948f2a8d3287d58, type: 2}
+  cubes:
+  - {fileID: 161140, guid: 0ae4da265070d6b41948f2a8d3287d58, type: 2}
+  - {fileID: 161140, guid: 4db08a11d25104d4c8bf33f50ad3d251, type: 2}
+  - {fileID: 161140, guid: 91ff1418e63f71d469bdfed1dadbc0db, type: 2}
 --- !u!4 &2065542621
 Transform:
   m_ObjectHideFlags: 0

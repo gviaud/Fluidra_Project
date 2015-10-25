@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11414994}
   - 108: {fileID: 10846532}
   m_Layer: 17
-  m_Name: Unity4TestCubeWithSplash
+  m_Name: Unity4TestCubeWithSplash 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4294906661
+    rgba: 4283432723
   m_Size: .400000006
 --- !u!1001 &100100000
 Prefab:
@@ -160,7 +160,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Color.rgba
-      value: 4294906661
+      value: 4283432723
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size

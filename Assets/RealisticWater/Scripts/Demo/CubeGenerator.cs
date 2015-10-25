@@ -4,7 +4,7 @@ using System.Collections;
 public class CubeGenerator : MonoBehaviour
 {
 	public Camera cam;
-    public GameObject cubes;
+    public GameObject[] cubes;
 
     // Use this for initialization
     void Start () {
@@ -43,7 +43,7 @@ public class CubeGenerator : MonoBehaviour
             {
 
 
-                var go = Instantiate(cubes, Hit.point + new Vector3(0, 1f, 0), Quaternion.identity) as GameObject;
+                var go = Instantiate(cubes[Random.Range(0,2)], Hit.point + new Vector3(0, 1f, 0), Quaternion.identity) as GameObject;
                 go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
                 Destroy(go, 5);
@@ -52,7 +52,7 @@ public class CubeGenerator : MonoBehaviour
             {
 
                 Debug.Log(Hit.point);
-				var go = Instantiate(cubes,Hit.point + new Vector3(0, 1f, 0), Quaternion.identity) as GameObject;
+				var go = Instantiate(cubes[Random.Range(0, 2)], Hit.point + new Vector3(0, 1f, 0), Quaternion.identity) as GameObject;
                 go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
                 Destroy(go, 5);
@@ -66,7 +66,7 @@ public class CubeGenerator : MonoBehaviour
         pos.y += 10;
         pos.z -= 4;
 	    pos += Random.insideUnitSphere *0.01f;
-        var go = Instantiate(cubes, pos, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360))) as GameObject;
+        var go = Instantiate(cubes[Random.Range(0, 2)], pos, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360))) as GameObject;
 		go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
 		go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
 		Destroy(go, 30);
