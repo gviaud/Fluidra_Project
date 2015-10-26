@@ -66,7 +66,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         if (Verification())
         {
             block_Input = true;
-            StartCoroutine(ChangeSpa(0.2f));
+            //StartCoroutine(ChangeSpa(0.2f));
 
         }
     }
@@ -84,7 +84,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
     {
         Choix_Menu.text = _text;
     }
-
+	/*
     IEnumerator ChangeSpa(float delayTime)
     {
 
@@ -162,7 +162,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         block_Input = false;
 
     }
-
+*/
     public void CloseMenu()
     {
 
