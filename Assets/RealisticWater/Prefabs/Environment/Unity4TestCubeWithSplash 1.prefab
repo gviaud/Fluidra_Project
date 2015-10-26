@@ -140,7 +140,7 @@ MonoBehaviour:
   SplashEffect: {fileID: 129212, guid: bd3bf0ad7039cae4e92bd458f39aa86f, type: 2}
   SplashEffectMoved: {fileID: 138562, guid: b10c4612fa59ff74891d70da2af48027, type: 2}
   SplashAudioSource: {fileID: 0}
-  splashSizeMultiplier: 1.95000005
+  splashSizeMultiplier: .0500000007
 --- !u!114 &11462642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,7 +181,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: splashSizeMultiplier
-      value: 0
+      value: .0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: RandomRipplesInterval
