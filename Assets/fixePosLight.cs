@@ -3,9 +3,9 @@ using System.Collections;
 
 public class fixePosLight : MonoBehaviour {
 	Vector3 pos;
-
+	private bool b;
 	void Start () {
-
+		b = false;
 	}
 	void update()
 	{
@@ -15,7 +15,7 @@ public class fixePosLight : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other){
 
-        if (other.name == "plage")
+        if ((other.name == "plage")&&(b==false))
         {
             Debug.Log("D5al");
             pos = transform.position + new Vector3(0, 0.1f, 0);
@@ -25,9 +25,10 @@ public class fixePosLight : MonoBehaviour {
         if (other.name == "Water")
         {
             Debug.Log("D5al");
-			pos = transform.position+ new Vector3(0, -.162f, 0);
+			pos = transform.position;
 			transform.position=pos;
-			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+			b=true;
 		}
 	}
 
