@@ -225,7 +225,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
     {
         light_Is_Activ = _activ;
 
-        print(_activ);
+        //print(_activ);
         if (!_activ)
         {
             Change_Water_Color(new Color(0, 0, 0, 1), true);
@@ -246,7 +246,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
         
         Get_Spa().GetComponent<Spa_Script>().GetWater().transform.FindChild("WaterLight").GetComponent<Light>().color = _color;
         Get_Spa().GetComponent<Spa_Script>().GetWater().GetComponent<Renderer>().material.SetColor("_Color", _color);
-        //print("CHANGE");
+        
         if( !_bool )
         {
             print(_color);
