@@ -25,7 +25,7 @@ public class fixePosLight : MonoBehaviour {
         if (other.name == "Water")
         {
             Debug.Log("D5al");
-			pos = transform.position+ new Vector3(0, -.16f, 0);
+			pos = transform.position+ new Vector3(0, -.162f, 0);
 			transform.position=pos;
 			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
 		}
