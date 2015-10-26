@@ -191,7 +191,7 @@ public class ColorPicker : MonoBehaviour {
 		//GUI.DrawTexture(rectAlpha, alphaGradient);
 
 		Rect rectFullSize = new Rect(startPos.x, startPos.y, sizeFull, sizeCurr + alphaGradHeight);
-        print(rectFullSize);
+        //print(rectFullSize);
 		Vector2 mousePos = Event.current.mousePosition;
 		Event e = Event.current;
 		bool isLeftMBtnClicked = e.type == EventType.mouseUp;
@@ -218,7 +218,7 @@ public class ColorPicker : MonoBehaviour {
 
                 if (isLeftMBtnClicked && pass)
 				{
-                    print("Apply");
+                    //print("Apply");
                     ApplyColor();
 				}
 				else
@@ -241,7 +241,7 @@ public class ColorPicker : MonoBehaviour {
 				SetColor(res);
 				if(isLeftMBtnDragging )
 				{
-                    print("Apply");
+                    //print("Apply");
 					ApplyColor();
 				}
 				UpdateColorEditFields(false);
@@ -258,7 +258,7 @@ public class ColorPicker : MonoBehaviour {
 				SetColor(curr);
 				if(isLeftMBtnDragging)
 				{
-                    print("Apply");
+                    //print("Apply");
                     ApplyColor();
 				}
 				UpdateColorEditFields(false);
