@@ -190,12 +190,13 @@ public class ColorPicker : MonoBehaviour {
 		Rect rectAlpha = new Rect(startPosAlpha.x, startPosAlpha.y, sizeCurr, alphaGradHeight);
 		//GUI.DrawTexture(rectAlpha, alphaGradient);
 
-		Rect rectFullSize = new Rect(startPos.x, startPos.y, sizeCurr, sizeCurr + alphaGradHeight);
-
+		Rect rectFullSize = new Rect(startPos.x, startPos.y, sizeFull, sizeCurr + alphaGradHeight);
+        print(rectFullSize);
 		Vector2 mousePos = Event.current.mousePosition;
 		Event e = Event.current;
 		bool isLeftMBtnClicked = e.type == EventType.mouseUp;
-		bool isLeftMBtnDragging = e.type == EventType.MouseDrag;
+
+        bool isLeftMBtnDragging = e.type == EventType.MouseDrag;
 		bool openCondition = (rectFullSize.Contains(e.mousePosition) && (((e.type == EventType.MouseUp || e.type == EventType.mouseDrag || e.type == EventType.MouseMove) && e.isMouse)));
 		bool closeCondition = isLeftMBtnClicked || (!rectFullSize.Contains(e.mousePosition)) && (e.isMouse && (e.type == EventType.MouseMove || e.type == EventType.MouseDown));
 		if(openCondition && (activeColorPicker == null || activeColorPicker.mState == ESTATE.Hidden))
@@ -211,9 +212,14 @@ public class ColorPicker : MonoBehaviour {
 		{
 			if(mState == ESTATE.Showed)
 			{
-				if(isLeftMBtnClicked)
+                bool pass = false;
+                if ((Input.mousePosition.x >= 853 && Input.mousePosition.x <= 997) && (Input.mousePosition.y >= 427 && Input.mousePosition.y <= 575))
+                    pass = true;
+
+                if (isLeftMBtnClicked && pass)
 				{
-					ApplyColor();
+                    print("Apply");
+                    ApplyColor();
 				}
 				else
 				{
@@ -235,6 +241,7 @@ public class ColorPicker : MonoBehaviour {
 				SetColor(res);
 				if(isLeftMBtnDragging )
 				{
+                    print("Apply");
 					ApplyColor();
 				}
 				UpdateColorEditFields(false);
@@ -251,7 +258,8 @@ public class ColorPicker : MonoBehaviour {
 				SetColor(curr);
 				if(isLeftMBtnDragging)
 				{
-					ApplyColor();
+                    print("Apply");
+                    ApplyColor();
 				}
 				UpdateColorEditFields(false);
 				UpdateColorSliders(false);
