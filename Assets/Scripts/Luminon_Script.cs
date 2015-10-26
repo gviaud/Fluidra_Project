@@ -17,7 +17,7 @@ public class Luminon_Script : MonoBehaviour {
         {
             // GetComponent<Buoyancy>().Density = GetComponent<Buoyancy>().Density - Time.deltaTime*1500.0f;
             //print(GetComponent<Buoyancy>().Density);
-            //GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+
             //GetComponent<Buoyancy>().Density = 100000;
         }
 

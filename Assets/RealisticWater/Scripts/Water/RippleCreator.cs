@@ -29,7 +29,8 @@ public class RippleCreator : MonoBehaviour
 	
 	void Start ()
 	{
-	    t = transform;
+   
+        t = transform;
         reversedVelocityQueue = new Queue<ReversedRipple>();
 	}
 

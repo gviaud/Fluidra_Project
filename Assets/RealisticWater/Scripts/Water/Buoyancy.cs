@@ -242,7 +242,7 @@ public class Buoyancy : MonoBehaviour
 
                 Vector3 force = localDampingForce + Mathf.Sqrt(k)*(normal*localArchimedesForce);
                 //Debug.DrawRay(wp, Mathf.Sqrt(k)*(WaterHit.normal*localArchimedesForce), Color.blue);
-
+               
                 GetComponent<Rigidbody>().AddForceAtPosition(force, wp);
 
                 forces.Add(new[] {wp, force}); // For drawing force gizmos
