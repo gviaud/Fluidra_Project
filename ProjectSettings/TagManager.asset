@@ -12,6 +12,7 @@ TagManager:
   - CylinderObj
   - Reserve
   - noRed
+  - bobowl
   layers:
   - Default
   - TransparentFX
