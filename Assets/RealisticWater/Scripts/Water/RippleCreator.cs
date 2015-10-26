@@ -35,6 +35,7 @@ public class RippleCreator : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (waterRipples==null)
             return;
 
@@ -76,6 +77,7 @@ public class RippleCreator : MonoBehaviour
 
     private void OnTriggerEnter(Collider collidedObj)
     {
+
         var temp = collidedObj.GetComponent<WaterRipples>();
         if (temp!=null) waterRipples = temp;
         else return;

@@ -43,7 +43,7 @@ public class CubeGenerator : MonoBehaviour
             {
 
 
-                var go = Instantiate(cubes[Random.Range(0,3)], Hit.point + new Vector3(0, 1f, 0), Quaternion.identity) as GameObject;
+                var go = Instantiate(cubes[Random.Range(0,3)], Hit.point + new Vector3(0, 3f, 0), Quaternion.identity) as GameObject;
                 go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
                 Destroy(go, 5);
@@ -52,9 +52,11 @@ public class CubeGenerator : MonoBehaviour
             {
 
                 Debug.Log(Hit.point);
-				var go = Instantiate(cubes[Random.Range(0, 3)], Hit.point + new Vector3(0, 1f, 0), Quaternion.identity) as GameObject;
-                go.AddComponent<Buoyancy>().Density = Random.Range(400, 600);
-                go.AddComponent<Rigidbody>().mass = Random.Range(30, 40);
+				var go = Instantiate(cubes[Random.Range(0, 3)], Hit.point + new Vector3(0, 3f, 0), Quaternion.identity) as GameObject;
+                go.AddComponent<Buoyancy>().Density = Random.Range(700, 700);
+                go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
+                
+                go.GetComponent<Luminon_Script>().ralentissement = true;
                 Destroy(go, 5);
             }
         }
@@ -62,6 +64,7 @@ public class CubeGenerator : MonoBehaviour
     // Update is called once per frame
     void UpdateCube()
     {
+
         var pos = transform.position;
         pos.y += 10;
         pos.z -= 4;

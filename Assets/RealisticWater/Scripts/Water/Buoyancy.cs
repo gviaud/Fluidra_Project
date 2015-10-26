@@ -9,7 +9,7 @@ public class Buoyancy : MonoBehaviour
     public int VoxelsLimit = 16;
     public float WaveVelocity = 0.05f;
 
-    private const float Dampfer = 0.1f;
+    private const float Dampfer = 1.5f;
     private const float WaterDensity = 1000;
 
     private float voxelHalfHeight;
