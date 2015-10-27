@@ -5,6 +5,9 @@ public class fixePosLight : MonoBehaviour {
 	Vector3 pos;
 	private bool b;
 	private bool entrer_c1;
+
+	bool waitActive = false; //so wait function wouldn't be called many times per frame
+
 	void Start () {
 		b = false;
 		entrer_c1 = true;
@@ -59,6 +62,23 @@ public class fixePosLight : MonoBehaviour {
 			
 		}
 	}
+	IEnumerator flotter()
+	{ 
+		waitActive = true;
+		yield return new WaitForSeconds(1f);
+		float startTime = Time.time; // Time.time contains current frame time, so remember starting point
+		float timer = 0;
+		while (Time.time - startTime <=1)
+		{ // until one second passed
+			transform.localPosition = Vector3.Lerp(transform.localPosition, pos+new Vector3(0,1.2f,0), timer); // lerp from A to B in one second
+			timer += Time.deltaTime*0.1f;
+			yield return new WaitForEndOfFrame(); // wait for next frame
+		}
+		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+		yield return new WaitForSeconds(2f);
+		waitActive = false;
+		yield return 1;
+	}
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other){
 		
@@ -70,6 +90,9 @@ public class fixePosLight : MonoBehaviour {
 			transform.position=pos;
 			
 			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+			if(!waitActive){
+			StartCoroutine(flotter());
+			}
 			b=true;
 		}
 	}
