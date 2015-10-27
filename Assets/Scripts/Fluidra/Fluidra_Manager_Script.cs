@@ -30,7 +30,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
     void Start ()
     {
 
-        spa_GO = transform.FindChild("SM240_Ref").gameObject;
+        spa_GO = transform.FindChild("SPA_WEBDEMO").gameObject;
         spa_GO_2 = transform.FindChild("SM240_Ref (1)").gameObject;
 
         fluidra_Transition_Image = GameObject.Find("CameraGUI").transform.GetChild(0).FindChild("Fluidra_Transition_GUI").GetComponent<Image>();
@@ -205,6 +205,7 @@ public class Fluidra_Manager_Script : MonoBehaviour {
             Get_Spa().GetComponent<Spa_Script>().Change_Texture(Get_Spa().GetComponent<Spa_Script>().GetSkirt(), _tex);
 
     }
+
     public void Emptying()
     {
         if (Verification())

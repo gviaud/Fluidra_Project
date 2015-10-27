@@ -5,10 +5,11 @@ public class Spa_Script : MonoBehaviour {
 
     Vector3 init_Position;
     
-    GameObject shell;
-    GameObject skirt;
+    Material shell;
+    Material skirt;
+    Material leather;
     GameObject plage;
-    GameObject mask;
+    
 
     //WATER
     GameObject water;
@@ -30,10 +31,13 @@ public class Spa_Script : MonoBehaviour {
 
         init_Position = transform.position;
 
-        shell = transform.FindChild("coque").gameObject;
-        skirt = transform.FindChild("jupe").gameObject;
+        shell = transform.FindChild("SPA").GetComponent<Renderer>().materials[0];
+        skirt = transform.FindChild("SPA").GetComponent<Renderer>().materials[4];
+        leather = transform.FindChild("SPA").GetComponent<Renderer>().materials[5];
+
         plage = transform.FindChild("plage").gameObject;
-        mask = transform.FindChild("mask").gameObject;
+
+        //mask = transform.FindChild("SPA").gameObject;
 
         water = transform.FindChild("Pool").FindChild("Water").gameObject;
         init_Bias_Pump = water.GetComponent<Renderer>().material.GetFloat("_Bias");
@@ -47,10 +51,9 @@ public class Spa_Script : MonoBehaviour {
 
     }
 
-    public void Change_Texture(GameObject _gameObject, Texture _tex)
+    public void Change_Texture(Material _mat, Texture _tex)
     {
-        if(_gameObject != null && ( _gameObject == shell || _gameObject == skirt))
-            _gameObject.GetComponent<Renderer>().material.mainTexture = _tex;
+        _mat.mainTexture = _tex;
     }
 
     public void Activ_Pump()
@@ -98,24 +101,24 @@ public class Spa_Script : MonoBehaviour {
     void AboveGround()
     {
 
-        plage.transform.localPosition = new Vector3(0, 0, 0);
-        mask.transform.localPosition = new Vector3(0, 0, 0);
+        plage.transform.localPosition = new Vector3(-1, 0, -1);
+        //mask.transform.localPosition = new Vector3(0, 0, 0);
         transform.position = init_Position - new Vector3(0, 0, 0);
 
     }
     void Semi_Bury()
     {
 
-        plage.transform.localPosition = new Vector3(0, 0.4f, 0);
-        mask.transform.localPosition = new Vector3(0, 0.4f, 0);
+        plage.transform.localPosition = new Vector3(-1, 0.4f, - 1);
+        //mask.transform.localPosition = new Vector3(0, 0.4f, 0);
         transform.position = init_Position - new Vector3(0, 0.4f, 0);
 
     }
     void Bury()
     {
 
-        plage.transform.localPosition = new Vector3(0, 0.85f, 0);
-        mask.transform.localPosition = new Vector3(0, 0.85f, 0);
+        plage.transform.localPosition = new Vector3(- 1, 0.85f, -1);
+        //mask.transform.localPosition = new Vector3(0, 0.85f, 0);
         transform.position = init_Position - new Vector3(0, 0.85f, 0);
 
     }
@@ -123,13 +126,17 @@ public class Spa_Script : MonoBehaviour {
 
 
 
-    public GameObject GetShell()
+    public Material GetShell()
     {
         return shell;
     }
-    public GameObject GetSkirt()
+    public Material GetSkirt()
     {
         return skirt;
+    }
+    public Material GetLeather()
+    {
+        return leather;
     }
     public GameObject GetWater()
     {

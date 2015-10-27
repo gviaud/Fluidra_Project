@@ -47,7 +47,7 @@ Material:
       data:
         first:
           name: _Scale
-        second: .100000001
+        second: 12
       data:
         first:
           name: _FPOW
@@ -55,7 +55,7 @@ Material:
       data:
         first:
           name: _R0
-        second: 2.71000004
+        second: .899999976
       data:
         first:
           name: _OffsetFresnel
@@ -83,15 +83,15 @@ Material:
       data:
         first:
           name: _TexturesScale
-        second: 5
+        second: 20
       data:
         first:
           name: _ReflectionBrightness
-        second: .300000012
+        second: .196428597
       data:
         first:
           name: _FoamIntensity
-        second: 5
+        second: .5
       data:
         first:
           name: _FadeBlend
@@ -116,7 +116,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .588235319, g: .886274517, b: 1, a: 1}
+        second: {r: .854902029, g: .94901967, b: .984313786, a: 1}
       data:
         first:
           name: _ReflectionColor

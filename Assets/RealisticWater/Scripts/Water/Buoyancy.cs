@@ -10,7 +10,7 @@ public class Buoyancy : MonoBehaviour
     public float WaveVelocity = 0.05f;
 
     private const float Dampfer = 1.5f;
-    private const float WaterDensity = 1000;
+    private const float WaterDensity = 500;
 
     private float voxelHalfHeight;
     private float localArchimedesForce;

@@ -39,24 +39,24 @@ public class CubeGenerator : MonoBehaviour
             {
                 Debug.Log(Hit.collider.name);
             }
-            if (Input.GetButtonDown("Fire1") && Hit.collider && Hit.collider.name == "plage")
+            
+            if(Input.GetButtonDown("Fire1") && Hit.collider && Hit.collider.name == "plage")
             {
 
 
                 var go = Instantiate(cubes[Random.Range(0,3)], Hit.point + new Vector3(0, 3f, 0), Quaternion.identity) as GameObject;
                 go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
-                Destroy(go, 5);
-            }/*
-            else if (Input.GetButtonDown("Fire1") && Hit.collider && Hit.collider.name == "coque")
+                //Destroy(go, 5);
+            }
+            else if(Input.GetButtonDown("Fire1") && Hit.collider && Hit.collider.name == "SPA")
             {
-
 
                 var go = Instantiate(cubes[Random.Range(0, 3)], Hit.point + new Vector3(0, 3f, 0), Quaternion.identity) as GameObject;
                 go.AddComponent<Buoyancy>().Density = Random.Range(700, 850);
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
-                Destroy(go, 5);
-            }*/
+                //Destroy(go, 5);
+            }
             else if (Input.GetButtonDown("Fire1") && Hit.collider && Hit.collider.name == "Water")
             {
 
@@ -65,8 +65,8 @@ public class CubeGenerator : MonoBehaviour
                 go.AddComponent<Buoyancy>().Density = Random.Range(200, 200);
                 go.AddComponent<Rigidbody>().mass = Random.Range(100, 150);
                 
-                go.GetComponent<Luminon_Script>().ralentissement = true;
-                Destroy(go, 8);
+               // go.GetComponent<Luminon_Script>().ralentissement = true;
+                //Destroy(go, 5);
             }
         }
     }

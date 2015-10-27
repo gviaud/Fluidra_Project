@@ -18,17 +18,21 @@ public class fixePosLight : MonoBehaviour {
         if ((other.name == "plage")&&(b==false))
         {
             Debug.Log("D5al");
-            pos = transform.position + new Vector3(0, 0.17f, 0);
-			transform.position=pos;
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
-           
+            // pos = transform.position + new Vector3(0, 0.17f, 0);
+            //transform.position=pos;
+            //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+            int rand = Random.Range(-100, 100);
+            float x = (float) rand/ 10.0f;
+            rand = Random.Range(-100, 100);
+            float z = (float)rand / 10.0f;
+            GetComponent<Rigidbody>().AddForce(x, 0, z);
         }
         if (other.name == "Water")
         {
             Debug.Log("D5al");
-			pos = transform.position ;
-			transform.position=pos;
-			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+			//pos = transform.position ;
+			//transform.position=pos;
+			//GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 			b=true;
 		}
 	}
