@@ -48,16 +48,16 @@ public class fixePosLight : MonoBehaviour {
 		if ((collision.collider.name == "plage")&&(b==false))
 		{
 			Debug.Log("traverser plage");
-			pos = transform.position + new Vector3(0, 0.17f, 0);
+			pos = transform.position + new Vector3(0, 0.23f, 0);
 			transform.position=pos;
-			if(entrer_c1){
+			/*if(entrer_c1){
 
                 ///int random = Random.Range(-20, 20);
                // float x = (float)random / 500.0f;
                // random = Random.Range(-20, 20);
                 //float z = (float)random / 500.0f;
                 StartCoroutine(WaitAndMove(0,pos+new Vector3(0, 0.5f, 0)));
-			}
+			}*/
 			GetComponent<Rigidbody>().constraints =  RigidbodyConstraints.FreezePositionY;
 			
 		}
@@ -90,10 +90,11 @@ public class fixePosLight : MonoBehaviour {
 			transform.position=pos;
 			
 			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-			if(!waitActive){
+			/*if(!waitActive){
 			StartCoroutine(flotter());
 			}
 			b=true;
+			*/
 		}
 	}
 	
