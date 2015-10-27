@@ -20,7 +20,7 @@ public class fixePosLight : MonoBehaviour {
 		yield return new WaitForSeconds(delayTime); // start at time X
 		float startTime = Time.time; // Time.time contains current frame time, so remember starting point
 		float timer = 0;
-		while (Time.time - startTime <= 0.4)
+		while (Time.time - startTime <= 0.25)
 		{ // until one second passed
 			transform.localPosition = Vector3.Lerp(transform.localPosition, _pos, timer); // lerp from A to B in one second
 			timer += Time.deltaTime*5;
@@ -31,7 +31,7 @@ public class fixePosLight : MonoBehaviour {
 		float timer2 = 0;
 		while (Time.time - startTime2 <= 0.4)
 		{ // until one second passed
-			transform.localPosition = Vector3.Lerp( _pos+new Vector3(0,-0.33f,0),transform.localPosition, timer2); // lerp from A to B in one second
+			transform.localPosition = Vector3.Lerp( _pos+new Vector3(0,-0.6f,0),transform.localPosition, timer2); // lerp from A to B in one second
 			timer2 += Time.deltaTime*2f;
 			yield return new WaitForEndOfFrame(); // wait for next frame
 		}
@@ -40,13 +40,10 @@ public class fixePosLight : MonoBehaviour {
 		Debug.Log ("te9leb");
 		yield return 1;
 	}
-	
-	// Update is called once per frame
-	void OnTriggerEnter(Collider other){
-		
-		if ((other.name == "plage")&&(b==false))
+	void OnCollisionEnter(Collision collision) {
+		if ((collision.collider.name == "plage")&&(b==false))
 		{
-			Debug.Log("D5al plage");
+			Debug.Log("traverser plage");
 			pos = transform.position + new Vector3(0, 0.17f, 0);
 			transform.position=pos;
 			if(entrer_c1){
@@ -55,9 +52,14 @@ public class fixePosLight : MonoBehaviour {
 			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
 			
 		}
+	}
+	// Update is called once per frame
+	void OnTriggerEnter(Collider other){
+		
+
 		if (other.name == "Water")
 		{
-			Debug.Log("D5al");
+			Debug.Log("traverser eau");
 			pos = transform.position ;
 			transform.position=pos;
 			
