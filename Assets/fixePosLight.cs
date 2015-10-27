@@ -49,7 +49,7 @@ public class fixePosLight : MonoBehaviour {
 			if(entrer_c1){
 				StartCoroutine(WaitAndMove(0,pos+new Vector3(0,0.5f,0)));
 			}
-			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+			GetComponent<Rigidbody>().constraints =  RigidbodyConstraints.FreezePositionY;
 			
 		}
 	}

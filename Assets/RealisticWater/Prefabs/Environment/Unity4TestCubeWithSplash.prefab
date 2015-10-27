@@ -92,7 +92,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 491536
+    m_Bits: 1015824
   m_Lightmapping: 4
   m_BounceIntensity: 0
   m_ShadowRadius: 0
@@ -240,7 +240,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_CullingMask.m_Bits
-      value: 491536
+      value: 1015824
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
