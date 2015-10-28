@@ -72,7 +72,7 @@ Material:
       data:
         first:
           name: _ColorStrength
-        second: 1
+        second: 2.5
       data:
         first:
           name: _WetStrength

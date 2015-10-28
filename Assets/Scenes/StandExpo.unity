@@ -721,7 +721,7 @@ Transform:
   m_LocalScale: {x: 20, y: 5, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!1 &502931793 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 174858, guid: 6e4c5e35f0a8f1048925144a61c7ec98, type: 2}
@@ -8997,8 +8997,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 15, z: .100000001}
-  m_Center: {x: 0, y: 1.43051011e-08, z: .0124822641}
+  m_Size: {x: 16.437397, y: 16.7229843, z: .100000001}
+  m_Center: {x: .11151886, y: .0114812842, z: .0124821691}
 --- !u!54 &1925375353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10588,23 +10588,23 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 7941a215a0a219d4886f780f41520e41, type: 2}
     - target: {fileID: 22498784, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22498784, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22491238, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMin.x
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22491238, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22491238, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22426160, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -10652,11 +10652,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22465650, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22462660, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11455292, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
