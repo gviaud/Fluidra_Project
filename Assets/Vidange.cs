@@ -11,7 +11,7 @@ public class Vidange : MonoBehaviour {
     // Use this for initialization
     void Start () {
         init_Position = transform.localPosition;
-        last_Position = new Vector3(0, -20.0f, 0);
+        last_Position = new Vector3(0, -10.0f, 0);
 
     }
 	
