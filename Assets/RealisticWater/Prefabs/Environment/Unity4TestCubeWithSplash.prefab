@@ -150,7 +150,7 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4294906661
-  m_Size: .100000001
+  m_Size: .0799999982
 --- !u!135 &13541538
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -176,7 +176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size
-      value: .100000001
+      value: .0799999982
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: splashSizeMultiplier
