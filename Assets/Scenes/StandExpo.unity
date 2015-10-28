@@ -720,8 +720,8 @@ Transform:
   m_LocalPosition: {x: -.109999999, y: 1.38, z: -9.09000015}
   m_LocalScale: {x: 20, y: 5, z: 15}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 2026044583}
+  m_RootOrder: 10
 --- !u!1 &502931793 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 174858, guid: 6e4c5e35f0a8f1048925144a61c7ec98, type: 2}
@@ -2611,8 +2611,8 @@ Transform:
   m_LocalPosition: {x: -8.85000038, y: 1.38, z: 0}
   m_LocalScale: {x: 15, y: 5, z: 20}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 2026044583}
+  m_RootOrder: 12
 --- !u!1 &756676682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4476,8 +4476,8 @@ Transform:
   m_LocalPosition: {x: -.109999999, y: 1.38, z: 9.10000038}
   m_LocalScale: {x: 20, y: 5, z: 15}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 2026044583}
+  m_RootOrder: 11
 --- !u!1 &1046638988 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 122770, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
@@ -4651,7 +4651,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 9
 --- !u!1 &1090183652
 GameObject:
   m_ObjectHideFlags: 0
@@ -6785,7 +6785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 12
 --- !u!1 &1510726544
 GameObject:
   m_ObjectHideFlags: 0
@@ -9269,8 +9269,12 @@ Transform:
   - {fileID: 1788683188}
   - {fileID: 1332208141}
   - {fileID: 2065542621}
+  - {fileID: 484947447}
+  - {fileID: 1036823426}
+  - {fileID: 738965630}
+  - {fileID: 2062473648}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
 --- !u!1001 &2029145936
 Prefab:
   m_ObjectHideFlags: 0
@@ -10969,8 +10973,8 @@ Transform:
   m_LocalPosition: {x: 8.89999962, y: 1.38, z: 0}
   m_LocalScale: {x: 15, y: 5, z: 20}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 2026044583}
+  m_RootOrder: 13
 --- !u!1 &2064726597 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 110104, guid: 3ea2b7cce217bcb48905c0b578612442, type: 2}
